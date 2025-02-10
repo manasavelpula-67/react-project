@@ -8,7 +8,9 @@ function Home() {
       <div className="container  text-center p-5 mt-5 py-5  m-5 ">
         <h1 className="display-3 text-success fw-bold">Nature's Basket</h1>
         <p className="lead" >Fresh to your Door..!!</p>
-        <button className="btn btn-warning btn-lg mt-3">Get Started</button>
+        <Link to="/getstarted" className="btn btn-warning btn-lg mt-3">
+          Get Started
+        </Link>
       </div>
       {/* About Section */}
       <div className="bg-light py-5 mt-5 text-center container p-3 m-5">

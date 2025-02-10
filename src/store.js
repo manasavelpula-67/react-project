@@ -55,16 +55,11 @@ const productSlice = createSlice({
             {image:"p5.jpeg",name:"Curry Leaves",price:30.00},
             {image:"/fg.webp", name: "FenuGreek(methi)", price: 250.0 },
             {image:"so.webp", name: "Spring Onion", price: 250.0 },
-
-        ],
-        iceCreams:[
-            {image:"vn.webp",name:"Vanilla ", price:100.0},
-            {image:"bt.jpg",name:"ButterScotch", price:150.0},
-            {image:"ch.jpg",name:"Chocolate",price:200.00},
-            {image:"st.jpeg",name:"Strawberry",price:280.00},
-            {image:"chb.jpeg",name:"Chocobar",price:300.00},
-            {image:"kf.jpeg",name:"Kulfi",price:50.00}
-
+            {image:"le.avif",name:"Lettuce",price:"180"},
+            {image:"br.avif", name: "Broccoli", price: 120.0 },
+            {image:"bs.jpg", name: "Basella", price: 30.0 },
+            {image:"mu.webp", name: "Mustard Greens", price: 80.9 },
+            {image:"dr.jpg", name: "Moringa (Drumstick Leaves)", price: 120.0 },
         ],
     },
     reducers: {},

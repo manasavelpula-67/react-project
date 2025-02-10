@@ -92,8 +92,9 @@ function Cart() {
   };
 
   return (
-    <div className="container mt-5 text-center m-5 p-5">
-      <h1 className="mb-4">Cart Page</h1>
+    <div className="container align-items-center mt-5 text-center m-5" 
+    style={{paddingLeft:"300px"}}>
+      <h1 className="mb-4 text-success fst-italic">Cart Page</h1>
       <p className="lead">Here you can see the items you selected in your cart.</p>
 
       {cartObjects.length > 0 ? (
@@ -165,7 +166,7 @@ function Cart() {
           </button>
         </div>
       ) : (
-        <p className="text-muted">Your cart is empty</p>
+        <p className="ext-success">Your cart is empty</p>
       )}
     </div>
   );

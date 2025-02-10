@@ -13,8 +13,8 @@ import { logout } from "./store";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LeafyVegetables from "./LeafyVegetables";
 import Fruits from "./Fruits";
-import IceCreams from "./IceCreams";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import GetStarted from "./GetStarted";
 function App() {
   const cart = useSelector((state) => state.cart);
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -45,27 +45,26 @@ function App() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink className="nav-link" to="/veg" aria-label="Vegetables">
+                <i class="fa-solid fa-carrot"></i>
                   Veg-Items
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/nonveg" aria-label="Non-Veg">
+                <i class="fa-solid fa-drumstick-bite"></i>
                   NonVeg-Items
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/laptop" aria-label="Laptop">
+                <i class="fa-solid fa-apple-whole"></i>
                   Fruits
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/mobile" aria-label="Mobile">
+                <i class="fa-solid fa-leaf"></i>
                   leafyVegetables
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/icecream" aria-label="IceCream">
-                  IceCreams
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -77,16 +76,19 @@ function App() {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/orders">
+                <i class="fa-solid fa-pen-to-square"></i>
                   Orders
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/about">
+                <i class="fa-solid fa-address-card"></i>
                   About-Us
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/contact">
+                <i class="fa-solid fa-phone"></i>
                   Contact-Us
                 </NavLink>
               </li>
@@ -122,9 +124,9 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/laptop" element={<Fruits/>} />
         <Route path="/mobile" element={<LeafyVegetables />} />
-        <Route path="/icecream" element={<IceCreams/>}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/*" element={<NotFound />} />
+        <Route path="/getstarted" element={<GetStarted/>}/>
       </Routes>
     </BrowserRouter>
   );
