@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Home() {
   return (
@@ -8,9 +8,9 @@ function Home() {
       <div className="container  text-center p-5 mt-5 py-5  m-5 ">
         <h1 className="display-3 text-success fw-bold">Nature's Basket</h1>
         <p className="lead" >Fresh to your Door..!!</p>
-        <Link to="/getstarted" className="btn btn-warning btn-lg mt-3">
+        <NavLink to="/getstarted" className="btn btn-warning btn-lg mt-3">
           Get Started
-        </Link>
+        </NavLink>
       </div>
       {/* About Section */}
       <div className="bg-light py-5 mt-5 text-center container p-3 m-5">
