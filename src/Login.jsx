@@ -5,93 +5,57 @@ import { login } from "./store";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Login() {
-  const username = useRef(null);
-  const password = useRef(null);
+  const usernameRef = useRef(null);
+  const passwordRef = useRef(null);
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const LoginCheck = () => {
-    if (username.current.value === "manasa" && password.current.value === "123456") {
-      dispatch(login(username.current.value));
-      setIsAuthenticated(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+    
+    if (username === "manasa" && password === "123456") {
+      dispatch(login(username));
       navigate("/home");
     } else {
-      setIsAuthenticated(false);
-      alert("Your credentials are wrong. Please check them and try again.");
+      setError("Invalid username or password. Please try again.");
     }
   };
 
   return (
-    <div
-      className="d-flex justify-content-center align-items-center"
-      style={{
-        minHeight: "100vh", // Ensure it takes the full height of the viewport
-        backgroundColor: "#f8f9fa",
-        paddingLeft:"450px",
-      }}
-    >
-      <div
-        className="card  border-primary rounded"
-        style={{
-          maxWidth: "400px", // Set a max width for responsiveness
-          width: "100%", // Ensures full width in smaller screens
-        }}
-      >
-        {/* Card Header */}
+    <div className="d-flex justify-content-center align-items-center vh-100 bg-light"
+    style={{paddingLeft:"450px"}}>
+      <div className="card shadow-lg p-4" style={{ width: "350px" }}>
         <div className="card-header bg-primary text-white text-center">
-          <h2 className="mb-0">Login Form</h2>
+          <h3>Login</h3>
         </div>
-
-        {/* Card Body */}
         <div className="card-body">
-          <form>
-            {/* Username Field */}
+          <form onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="username" className="form-label text-danger fw-bold">
-                User Name:
-              </label>
+              <label className="form-label fw-bold">Username</label>
               <input
                 type="text"
-                id="username"
-                ref={username}
+                ref={usernameRef}
                 className="form-control"
-                placeholder="Enter your username"
+                placeholder="Enter username"
+                required
               />
             </div>
-
-            {/* Password Field */}
             <div className="mb-3">
-              <label htmlFor="password" className="form-label text-success fw-bold">
-                Password:
-              </label>
+              <label className="form-label fw-bold">Password</label>
               <input
                 type="password"
-                id="password"
-                ref={password}
+                ref={passwordRef}
                 className="form-control"
-                placeholder="Enter your password"
+                placeholder="Enter password"
+                required
               />
             </div>
-
-            {/* Login Button */}
-            <button
-              type="button"
-              onClick={LoginCheck}
-              className="btn btn-primary w-100"
-            >
-              Login
-            </button>
+            {error && <p className="text-danger text-center">{error}</p>}
+            <button type="submit" className="btn btn-primary w-100">Login</button>
           </form>
-
-          {/* Feedback Message */}
-          <div className="mt-3 text-center">
-            {isAuthenticated ? (
-              <span className="text-success">Your login was successful!</span>
-            ) : (
-              <span className="text-danger">Please enter valid credentials.</span>
-            )}
-          </div>
         </div>
       </div>
     </div>

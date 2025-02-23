@@ -23,12 +23,12 @@ const productSlice = createSlice({
             {image:"/p2.jpg", name: "chicken", price: 350.0 },
             {image:"/pr.jpg", name: "prawns", price: 450.0 },
             {image:"/p1.png", name: "mutton", price: 800.0 },
-            {image:"/bf.webp", name: "beef", price: 350.0 },
+            {image:"/bf.webp", name: "beef", price: 500.0 },
             {image:"/p1.avif", name: "fish", price: 250.0 },
-            {image:"/cra.jpg", name: "crab", price: 250.0 },
+            {image:"/cra.jpg", name: "crab", price: 550.0 },
             {image:"/egg.jpg", name: "Eggs", price: 150.0 },
-            {image:"/Mbt.webp", name: "Mutton Boti Tikka", price: 660.0 },
-            {image:"/clp.jpg", name: "Chicken Leg pieces", price: 109.0 },
+            {image:"/Mbt.webp", name: "Mutton Boti Tikka", price: 900.0 },
+            {image:"/clp.jpg", name: "Chicken Leg pieces", price: 300.0 },
             
         ],
         fruits: [
@@ -40,11 +40,11 @@ const productSlice = createSlice({
             {image:"/pgs.avif",name:"pomegranate", price: 324.0 },
             {image:"/gp.jpg",name: "grapes", price: 250.0 },
             {image:"/pp.jpg",name: "papaya", price: 115.0 },
-            {image:"/str.jpg", name: "Strawberry", price: 250.0 },
+            {image:"/str.jpg", name: "Strawberry", price: 200.0 },
             {image:"/pa.jpg", name: "PineApple", price: 250.0 },
-            {image:"/mk.jpg", name: "MuskMelon", price: 250.0 },
-            {image:"/wm.webp", name: "Water Melon", price: 250.0 },
-            {image:"/mg.webp", name: "Mango", price: 250.0 },
+            {image:"/mk.jpg", name: "MuskMelon", price: 180.0 },
+            {image:"/wm.webp", name: "Water Melon", price: 70.0 },
+            {image:"/mg.webp", name: "Mango", price: 150.0 },
             {image:"/av.webp",name:"Avacado",price:170.5}
         ],
         leafyVegetables:[

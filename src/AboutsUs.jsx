@@ -19,7 +19,7 @@ function AboutUs() {
                         className="card-header bg-primary text-white"
                         style={{ fontWeight: "bold", fontSize: "2rem" }}
                     >
-                        <h1 className="text-center fst-italic">About Us</h1>
+                        <h1 className="text-center">About Us</h1>
                     </div>
                     <div className="card-body" style={{ lineHeight: "1.8" }}>
                         <h2 className="mb-4 text-secondary" style={{ fontWeight: "600" }}>

@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addtoCart } from "./store";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Veg() {
   const vegItems = useSelector((state) => state.products.veg);
   const dispatch = useDispatch();
-
   // Timer state for discount offer
   const [discountTime, setDiscountTime] = useState(300); // 300 seconds = 5 minutes
   const offerActive = discountTime > 0;
@@ -50,7 +50,7 @@ function Veg() {
   const perPage = 6;
 
  
-  const totalPages = Math.ceil(filteredItems.length / perPage);
+  const totalPages = Math.ceil(searchResults.length / perPage);
   const pageStartItemIndex = pageNumber * perPage;
   const currentItems = searchResults.slice(
     pageStartItemIndex,
@@ -62,6 +62,10 @@ function Veg() {
       setPageNumber(page);
     }
   };
+  //login page before adding to cart
+  const handleAddtoCart = (item) => {
+    dispatch(addtoCart(item));
+  }
   const finalItems = currentItems.map((item, index) => (
     <div key={index} className="col-md-4 mb-4">
       <div className="card h-100">
@@ -78,7 +82,7 @@ function Veg() {
             {offerActive && <span className="text-danger"> (₹{item.price})</span>}
           </p>
           <button
-            onClick={() => dispatch(addtoCart(item))}
+            onClick={()=> handleAddtoCart(item)}
             className="btn btn-success w-100"
           >
             Add to Cart
@@ -99,7 +103,7 @@ function Veg() {
           placeholder="Search by Name"
           value={searchItem}
           onChange={(e) => setSearchItem(e.target.value)}
-          className="form-control form-control-sm w-50 mx-auto"
+          className="form-control form-controkl-sm w-50 mx-auto"
         />
       </div>
 
